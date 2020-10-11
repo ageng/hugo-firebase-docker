@@ -1,2 +1,3 @@
 # hugo-firebase-docker
-Hugo + Firebase Images
+
+Docker Images with hugo and firebase-cli installed
