@@ -4,7 +4,7 @@ FROM node:12-alpine
 LABEL maintainer="me@ageng.my.id"
 
 # variables versi hugo latest
-ENV HUGO_VERSION=0.78.2
+ENV HUGO_VERSION=0.82.0
 
 # install hugo and firebase
 RUN set -x && \
