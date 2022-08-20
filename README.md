@@ -4,7 +4,7 @@ Docker Images with hugo and firebase-cli installed
 
 # Using on Gitlab CI
 
-Here the example of `.gitlab-ci.yml` for Hugo `0.78.2`:
+Here the example of `.gitlab-ci.yml` for Hugo `0.101.0`:
 
 ```yaml
 
