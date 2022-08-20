@@ -1,10 +1,10 @@
-FROM node:lts-alpine3.14
+FROM public.ecr.aws/docker/library/node:lts-alpine3.16
 
 # labels
-LABEL maintainer="me@ageng.my.id"
+LABEL maintainer="mail@seni.one"
 
 # variables versi hugo latest
-ENV HUGO_VERSION=0.86.0
+ENV HUGO_VERSION=0.101.0
 
 # install hugo and firebase
 RUN set -x && \
