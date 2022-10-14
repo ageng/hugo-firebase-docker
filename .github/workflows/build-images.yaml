@@ -44,8 +44,19 @@ jobs:
         uses: docker/build-push-action@v3.1.1
         if: ${{ github.ref != 'refs/heads/main' }}
         with:
+          file: ./Dockerfile
+          push: false
+          platforms: linux/amd64
+          tags: ${{ steps.meta.outputs.tags }}
+          labels: ${{ steps.meta.outputs.labels }}
+
+      - name: Build and push versioned docker images x64_86
+        id: build-and-push
+        uses: docker/build-push-action@v3.1.1
+        if: ${{ github.ref != 'refs/heads/main' }}
+        with:
           file: ./arm
           push: false
-          platforms: linux/arm/v7
+          platforms: linux/amd64,linux/arm/v7
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
