@@ -3,7 +3,6 @@ name: Create and publish docker images
 on:
   push:
     branches:
-      - 'main'
       - 'feat/*'
 
 env:
@@ -37,13 +36,16 @@ jobs:
       - name: Docker buildx
         uses: docker/setup-buildx-action@v2
       
+      - name: Setup qemu
+        uses: docker/setup-qemu-action@v2
+      
       - name: Build and push versioned docker images ARM
         id: build-and-push
         uses: docker/build-push-action@v3.1.1
         if: ${{ github.ref != 'refs/heads/main' }}
         with:
           file: ./arm
-          push: true
-          platforms: linux/arm/v7, linux/arm/v8
+          push: false
+          platforms: linux/arm/v7
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
