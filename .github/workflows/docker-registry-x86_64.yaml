@@ -27,7 +27,7 @@ jobs:
         uses: docker/build-push-action@v3.1.1
         if: ${{ github.ref == 'refs/heads/main' }}
         with:
-          context: ./Dockerfile
+          context: .
           push: true
           platforms: linux/amd64
           tags: isenganime/hugofirebase:latest
