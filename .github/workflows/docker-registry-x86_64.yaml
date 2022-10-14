@@ -29,5 +29,6 @@ jobs:
         with:
           context: ./Dockerfile
           push: true
+          platforms: linux/amd64
           tags: isenganime/hugofirebase:latest
           labels: ${{ steps.meta.outputs.label }}
